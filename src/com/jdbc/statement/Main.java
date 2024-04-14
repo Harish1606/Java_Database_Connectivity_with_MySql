@@ -15,6 +15,7 @@ public class Main {
         String query = "SELECT * FROM employee";
         String updateQuery = "insert into employee values(7,'BE','harish@gmail.com','9309430930','harish')";
 
+        //forName will load the driver which internally also register the driver
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         Connection connection = DriverManager.getConnection(url, username, password);

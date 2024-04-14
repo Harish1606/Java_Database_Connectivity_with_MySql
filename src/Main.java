@@ -10,7 +10,7 @@ public class Main {
         String url = "jdbc:mysql://localhost:3306/userdb";
         String username = "root";
         String password = "Harish@1606";
-        String query = "select user_name from employee where id=5";
+        String query = "SELECT * FROM employee;";
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -19,11 +19,11 @@ public class Main {
         Statement statement = connection.createStatement();
 
         ResultSet resultSet = statement.executeQuery(query);
-        resultSet.next();
 
-        String name = resultSet.getString("user_name");
-
-        System.out.println(name);
+        while (resultSet.next()) {
+            String employeeData = resultSet.getInt(1) + " : " + resultSet.getString(2) + " : " + resultSet.getString(3) + " : " + resultSet.getString(4) + " : " + resultSet.getString(5);
+            System.out.println(employeeData);
+        }
 
         statement.close();
         connection.close();

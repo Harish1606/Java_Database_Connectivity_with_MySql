@@ -10,6 +10,14 @@ public class Employee {
     public Employee(){
     }
 
+    public Employee(int id, String qualification, String emailId, String mobileNo, String name) {
+        this.id = id;
+        this.qualification = qualification;
+        this.emailId = emailId;
+        this.mobileNo = mobileNo;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
